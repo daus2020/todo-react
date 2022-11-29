@@ -25,17 +25,15 @@ export default function TodoApp() {
   }
 
   function handleUpdate(id, value) {
-    const temp = [...todos];
-    const item = temp.find((item) => item.id === id);
-    item.title = value;
-    setTodos(temp);
-    // const newTitle = todos.map((el) =>
-    //   el.key === id ? (el.title = value) : el
-    // );
-    // setTodos(newTitle);
-    // const item = todos.find((todo) => todo.id === id);
+    const items = todos.filter((item) =>
+      item.id === id ? (item.title = value) : item
+    );
+    setTodos(items);
+
+    // const temp = [...todos];
+    // const item = temp.find((item) => item.id === id);
     // item.title = value;
-    // setTodos(...todos, item);
+    // setTodos(temp);
   }
 
   function handleDelete(id) {
